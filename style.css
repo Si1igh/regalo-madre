@@ -1,0 +1,16 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  background-color: #fff0f5;
+}
+
+section {
+  padding: 50px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: pink;
+  border: none;
+  border-radius: 10px;
+}

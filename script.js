@@ -73,4 +73,4 @@ function crearParticulas() {
 }
 
 // repetir constantemente
-setInterval(crearParticulas, 3000);
+crearParticulas();

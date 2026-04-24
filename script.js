@@ -54,3 +54,23 @@ corazon.style.fontSize = (Math.random() * 20 + 15) + "px";
     }, 2000);
   }
 }
+function crearParticulas() {
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement("div");
+    p.classList.add("particula");
+
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDuration = (Math.random() * 5 + 5) + "s";
+    p.style.opacity = Math.random();
+
+    document.body.appendChild(p);
+
+    // eliminar y recrear
+    setTimeout(() => {
+      p.remove();
+    }, 10000);
+  }
+}
+
+// repetir constantemente
+setInterval(crearParticulas, 3000);

@@ -7,7 +7,9 @@ function mostrarMensaje() {
 
   crearCorazones();
 
-  musica.play(); // 🎵 AQUÍ
+  if (musica) {
+  musica.play().catch(() => {});
+}
 
   setTimeout(() => {
     document.getElementById("carta").scrollIntoView({

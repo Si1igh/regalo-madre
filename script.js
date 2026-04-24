@@ -1,6 +1,14 @@
 function mostrarMensaje() {
-  document.getElementById("mensaje").innerText =
-  "Te amo mucho mamá 💖";
+  const mensaje = document.getElementById("mensaje");
+
+  mensaje.innerText = "Te amo mucho mamá 💖";
+  mensaje.style.opacity = "1";
+
+  setTimeout(() => {
+    document.getElementById("carta").scrollIntoView({
+      behavior: "smooth"
+    });
+  }, 1500);
 }
 
 function scrollToSection() {

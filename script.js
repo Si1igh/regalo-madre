@@ -31,3 +31,19 @@ function mostrarElementos() {
 }
 
 window.addEventListener("scroll", mostrarElementos);
+function crearCorazones() {
+  for (let i = 0; i < 10; i++) {
+    const corazon = document.createElement("div");
+    corazon.innerText = "💖";
+    corazon.classList.add("corazon");
+
+    corazon.style.left = Math.random() * window.innerWidth + "px";
+    corazon.style.top = (window.innerHeight - 100) + "px";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+      corazon.remove();
+    }, 2000);
+  }
+}

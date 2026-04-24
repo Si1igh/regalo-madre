@@ -43,8 +43,9 @@ function crearCorazones() {
     corazon.innerText = "💖";
     corazon.classList.add("corazon");
 
-   corazon.style.top = (window.innerHeight - Math.random() * 150) + "px";
-    corazon.style.top = (window.innerHeight - 100) + "px";
+  corazon.style.left = Math.random() * 100 + "vw";
+corazon.style.top = (window.innerHeight - Math.random() * 150) + "px";
+corazon.style.fontSize = (Math.random() * 20 + 15) + "px";
 
     document.body.appendChild(corazon);
 

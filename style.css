@@ -107,3 +107,6 @@ img {
     opacity: 0;
   }
 }
+.particula, .corazon {
+  pointer-events: none;
+}

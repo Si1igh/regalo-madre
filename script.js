@@ -8,8 +8,8 @@ function mostrarMensaje() {
   crearCorazones();
 
   if (musica) {
-  musica.play().catch(() => {});
-}
+    musica.play().catch(() => {});
+  }
 
   setTimeout(() => {
     document.getElementById("carta").scrollIntoView({
@@ -17,17 +17,27 @@ function mostrarMensaje() {
     });
   }, 1500);
 }
+
 function scrollToSection() {
   document.getElementById("historia").scrollIntoView({
     behavior: "smooth"
   });
 }
+
 let elementos;
 
+// ✅ TODO ocurre cuando la página ya cargó
 window.addEventListener("load", () => {
   elementos = document.querySelectorAll(".oculto");
   mostrarElementos();
-   crearParticulas();
+
+  // ✨ partículas iniciales
+  crearParticulas();
+
+  // ✨ partículas constantes
+  setInterval(() => {
+    crearParticulas();
+  }, 4000);
 });
 
 function mostrarElementos() {
@@ -43,15 +53,16 @@ function mostrarElementos() {
 }
 
 window.addEventListener("scroll", mostrarElementos);
+
 function crearCorazones() {
   for (let i = 0; i < 10; i++) {
     const corazon = document.createElement("div");
     corazon.innerText = "💖";
     corazon.classList.add("corazon");
 
-  corazon.style.left = Math.random() * 100 + "vw";
-corazon.style.top = (window.innerHeight - Math.random() * 150) + "px";
-corazon.style.fontSize = (Math.random() * 20 + 15) + "px";
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.top = (window.innerHeight - Math.random() * 150) + "px";
+    corazon.style.fontSize = (Math.random() * 20 + 15) + "px";
 
     document.body.appendChild(corazon);
 
@@ -60,6 +71,7 @@ corazon.style.fontSize = (Math.random() * 20 + 15) + "px";
     }, 2000);
   }
 }
+
 function crearParticulas() {
   for (let i = 0; i < 20; i++) {
     const p = document.createElement("div");
@@ -71,12 +83,8 @@ function crearParticulas() {
 
     document.body.appendChild(p);
 
-    // eliminar y recrear
     setTimeout(() => {
       p.remove();
     }, 10000);
   }
 }
-
-
-window.addEventListener("load", mostrarElementos);

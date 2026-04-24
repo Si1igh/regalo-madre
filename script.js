@@ -22,7 +22,12 @@ function scrollToSection() {
     behavior: "smooth"
   });
 }
-const elementos = document.querySelectorAll(".oculto");
+let elementos;
+
+window.addEventListener("load", () => {
+  elementos = document.querySelectorAll(".oculto");
+  mostrarElementos();
+});
 
 function mostrarElementos() {
   const alturaPantalla = window.innerHeight;
@@ -74,3 +79,4 @@ function crearParticulas() {
 
 // repetir constantemente
 crearParticulas();
+window.addEventListener("load", mostrarElementos);
